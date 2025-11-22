@@ -31,6 +31,14 @@
       align-items: center;
       justify-content: center;
     }
+
+    /* Reduce overall print scale so the previous page fits on a single sheet */
+    .print-container {
+      -webkit-transform: scale(0.9);
+      transform: scale(0.9);
+      transform-origin: top center;
+      width: calc(100% / 0.9);
+    }
   }
 </style>
 
