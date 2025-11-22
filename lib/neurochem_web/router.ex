@@ -34,6 +34,7 @@ defmodule NeurochemWeb.Router do
     get "/research", PageController, :research
     get "/products", PageController, :products
     get "/contact", PageController, :contact
+    live "/origami-envelope", OrigamiEnvelopeLive
   end
 
   # Underground SUBMISSYN Site (illicit ordering/marketplace)
