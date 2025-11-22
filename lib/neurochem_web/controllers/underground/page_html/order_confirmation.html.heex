@@ -1,0 +1,136 @@
+<div class="min-h-screen bg-gradient-to-br from-zinc-950 via-red-950/10 to-zinc-950 text-gray-100 py-12 px-4 sm:px-6 lg:px-8">
+  <div class="mx-auto max-w-xl">
+
+    <!-- Header -->
+    <div class="text-center mb-8">
+      <div class="inline-flex items-center justify-center w-16 h-16 bg-red-900/20 rounded-full mb-4">
+        <svg class="w-8 h-8 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+        </svg>
+      </div>
+      <h1 class="text-2xl font-bold tracking-tight text-white mb-2">Order Confirmed</h1>
+      <p class="text-sm text-gray-400">Order #SUB-2024-R7-1142</p>
+    </div>
+
+    <!-- Success Message -->
+    <div class="bg-zinc-900 border border-red-900/30 rounded-lg p-6 mb-6">
+      <div class="flex items-start">
+        <div class="flex-shrink-0">
+          <svg class="h-5 w-5 text-green-400" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+          </svg>
+        </div>
+        <div class="ml-3">
+          <h3 class="text-sm font-medium text-green-400">Payment Received</h3>
+          <p class="mt-2 text-sm text-gray-400">
+            Your cryptocurrency payment has been confirmed. Product has been prepared for delivery.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Delivery Information Form -->
+    <div class="bg-zinc-900 border border-red-900/30 rounded-lg p-6 mb-6">
+      <h2 class="text-lg font-semibold text-white mb-4 flex items-center">
+        <svg class="w-5 h-5 mr-2 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+        </svg>
+        Delivery Confirmation
+      </h2>
+
+      <p class="text-sm text-gray-400 mb-6">
+        For our records, please confirm the delivery details below. This information is used for verification only and will be permanently deleted after delivery confirmation.
+      </p>
+
+      <form id="confirmationForm" class="space-y-4">
+        <div>
+          <label for="recipient_name" class="block text-sm font-medium text-gray-300 mb-2">
+            Recipient Name
+          </label>
+          <input
+            type="text"
+            id="recipient_name"
+            name="recipient_name"
+            required
+            placeholder="Enter full name"
+            class="w-full px-4 py-3 bg-zinc-950 border border-red-900/30 rounded-lg text-white placeholder-gray-600 focus:outline-none focus:border-red-500 focus:ring-1 focus:ring-red-500"
+          >
+        </div>
+
+        <div>
+          <label for="delivery_address" class="block text-sm font-medium text-gray-300 mb-2">
+            Delivery Address
+          </label>
+          <textarea
+            id="delivery_address"
+            name="delivery_address"
+            required
+            rows="3"
+            placeholder="Enter complete delivery address"
+            class="w-full px-4 py-3 bg-zinc-950 border border-red-900/30 rounded-lg text-white placeholder-gray-600 focus:outline-none focus:border-red-500 focus:ring-1 focus:ring-red-500"
+          ></textarea>
+        </div>
+
+        <div class="bg-red-900/20 border border-red-900/40 rounded-lg p-4">
+          <div class="flex">
+            <div class="flex-shrink-0">
+              <svg class="h-5 w-5 text-red-400" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/>
+              </svg>
+            </div>
+            <div class="ml-3">
+              <p class="text-xs text-red-300">
+                This information will be encrypted and automatically destroyed 48 hours after delivery. No permanent records will be retained.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <button
+          type="submit"
+          class="w-full bg-red-900 hover:bg-red-800 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200 flex items-center justify-center"
+        >
+          <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+          Generate Receipt
+        </button>
+      </form>
+    </div>
+
+    <!-- Security Notice -->
+    <div class="bg-zinc-950 border border-red-900/20 rounded-lg p-4">
+      <div class="flex items-start">
+        <div class="flex-shrink-0">
+          <svg class="h-5 w-5 text-gray-500" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd"/>
+          </svg>
+        </div>
+        <div class="ml-3">
+          <p class="text-xs text-gray-500 leading-relaxed">
+            All communications are encrypted end-to-end. Transaction records are stored in decentralized systems only. Your receipt will contain instructions for product retrieval and usage.
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  document.getElementById('confirmationForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const recipientName = document.getElementById('recipient_name').value;
+    const deliveryAddress = document.getElementById('delivery_address').value;
+
+    // Create URL with parameters
+    const params = new URLSearchParams({
+      name: recipientName,
+      address: deliveryAddress
+    });
+
+    // Redirect to receipt with parameters
+    window.location.href = '/receipt?' + params.toString();
+  });
+</script>

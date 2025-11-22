@@ -1,0 +1,115 @@
+---
+- name: Install Trenr
+  hosts: servers
+  become: true
+  vars:
+    app_name: neurochem
+    app_name_env: "{{ app_name }}_{{ env }}"
+    base_dir: /opt/{{ app_name_env }}
+    volume_dir: /var/{{ app_name_env }}
+
+  handlers:
+    - name: caddy reload
+      service:
+        name: caddy
+        state: reloaded
+      become: true
+
+  tasks:
+    # - name: Install Caddy
+    #   apt:
+    #     name: caddy
+    #     state: latest
+    #     update_cache: true
+    #   become: true
+
+    # - name: Ensure caddy service is enabled and started
+    #   systemd:
+    #     name: caddy
+    #     enabled: true
+    #     state: started
+    #   become: true
+
+    # - name: Ensure caddy log dir exists
+    #   file:
+    #     path: /var/log/caddy
+    #     state: directory
+    #     owner: root
+    #     group: root
+    #     mode: '0755'
+    #   become: true
+
+    # - name: Caddyfile
+    #   template:
+    #     src: "files/Caddyfile.j2"
+    #     dest: /etc/caddy/Caddyfile
+    #     owner: root
+    #     group: root
+    #     mode: '0644'
+    #   notify: caddy reload
+    #   become: true
+
+    - name: Login to private docker registry
+      community.docker.docker_login:
+        registry_url: "{{ registry_address }}"
+        username: "{{ registry_user }}"
+        password: "{{ registry_password }}"
+
+    - name: Check if Postgres data directory exists
+      ansible.builtin.stat:
+        path: "{{ volume_dir }}/postgres/data"
+      register: postgres_data_dir
+
+    - name: Create postgres directory if missing
+      ansible.builtin.file:
+        path: "{{ volume_dir }}/postgres/data"
+        state: directory
+        owner: 999
+        group: 999
+        mode: '777'
+      become: true
+      when: not postgres_data_dir.stat.exists
+
+    - name: Create app directory
+      ansible.builtin.file:
+        path: "{{ base_dir }}"
+        state: directory
+        owner: ubuntu
+        group: ubuntu
+      become: true
+
+    - name: Copy docker-compose.yml
+      template:
+        src: files/docker-compose.yml.j2
+        dest: "{{ base_dir }}/docker-compose.yml"
+        owner: ubuntu
+        group: ubuntu
+
+    - name: Copy .env
+      template:
+        src: files/env.j2
+        dest: "{{ base_dir }}/.env"
+        owner: ubuntu
+        group: ubuntu
+
+    - name: Pull
+      community.docker.docker_compose_v2:
+        project_src: "{{ base_dir }}"
+        pull: always
+
+    - name: Down everything if already running
+      community.docker.docker_compose_v2:
+        project_src: "{{ base_dir }}"
+        state: absent
+        remove_volumes: true
+
+    - name: Start
+      community.docker.docker_compose_v2:
+        project_src: "{{ base_dir }}"
+        state: present
+
+    - name: Migrate
+      shell: docker compose -f {{ base_dir }}/docker-compose.yml run --rm {{ app_name }} /app/bin/{{ app_name }} eval Trenr.Release.migrate
+
+    - name: Seed
+      shell: docker compose -f {{ base_dir }}/docker-compose.yml run --rm {{ app_name }} /app/bin/{{ app_name }} eval "Application.ensure_all_started(:trenr); Trenr.Release.seed"

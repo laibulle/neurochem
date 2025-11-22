@@ -1,0 +1,246 @@
+<div class="py-16 px-4 sm:px-6 lg:px-8">
+  <div class="mx-auto max-w-5xl">
+
+    <div class="text-center mb-12">
+      <h1 class="text-4xl font-bold text-white mb-4">Secure Order Portal</h1>
+      <p class="text-gray-400 max-w-2xl mx-auto">
+        Complete the form below to place your order. All information is encrypted and will be
+        permanently deleted after fulfillment.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+
+      <!-- Order Form -->
+      <div class="lg:col-span-2">
+        <form class="space-y-6">
+
+          <!-- Product Selection -->
+          <div class="bg-zinc-900/50 border border-red-900/30 rounded-lg p-6">
+            <h3 class="text-white font-semibold mb-4">Product Selection</h3>
+            <div class="space-y-4">
+              <div>
+                <label for="product" class="block text-sm font-medium text-gray-400 mb-2">Select Product</label>
+                <select id="product" name="product" class="w-full px-4 py-3 bg-black border border-red-900/30 rounded-md text-white focus:ring-2 focus:ring-red-500 focus:border-transparent">
+                  <option>SUBMISSYN Standard (SUB-100) - $850</option>
+                  <option>SUBMISSYN Enhanced (SUB-200) - $1,400</option>
+                  <option>SUBMISSYN Micro-Dose (SUB-050) - $450</option>
+                  <option>SUBMISSYN Extended Release (SUB-300XR) - $2,200</option>
+                </select>
+              </div>
+              <div>
+                <label for="quantity" class="block text-sm font-medium text-gray-400 mb-2">Quantity</label>
+                <input type="number" id="quantity" name="quantity" min="1" max="10" value="1" class="w-full px-4 py-3 bg-black border border-red-900/30 rounded-md text-white focus:ring-2 focus:ring-red-500 focus:border-transparent" />
+                <p class="text-xs text-gray-500 mt-2">Maximum 10 vials per order. For bulk orders, contact us separately.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Shipping Information -->
+          <div class="bg-zinc-900/50 border border-red-900/30 rounded-lg p-6">
+            <h3 class="text-white font-semibold mb-4">Delivery Information</h3>
+            <div class="space-y-4">
+              <div class="bg-red-950/20 border border-red-900/50 rounded p-3 mb-4">
+                <p class="text-xs text-gray-400">
+                  <strong class="text-red-400">Privacy Notice:</strong> Consider using a private mailbox,
+                  mail forwarding service, or alternate address to further protect your identity.
+                </p>
+              </div>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label for="first-name" class="block text-sm font-medium text-gray-400 mb-2">First Name (Alias)</label>
+                  <input type="text" id="first-name" name="first-name" class="w-full px-4 py-3 bg-black border border-red-900/30 rounded-md text-white focus:ring-2 focus:ring-red-500 focus:border-transparent" />
+                </div>
+                <div>
+                  <label for="last-name" class="block text-sm font-medium text-gray-400 mb-2">Last Name (Alias)</label>
+                  <input type="text" id="last-name" name="last-name" class="w-full px-4 py-3 bg-black border border-red-900/30 rounded-md text-white focus:ring-2 focus:ring-red-500 focus:border-transparent" />
+                </div>
+              </div>
+              <div>
+                <label for="address" class="block text-sm font-medium text-gray-400 mb-2">Street Address</label>
+                <input type="text" id="address" name="address" class="w-full px-4 py-3 bg-black border border-red-900/30 rounded-md text-white focus:ring-2 focus:ring-red-500 focus:border-transparent" />
+              </div>
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <div>
+                  <label for="city" class="block text-sm font-medium text-gray-400 mb-2">City</label>
+                  <input type="text" id="city" name="city" class="w-full px-4 py-3 bg-black border border-red-900/30 rounded-md text-white focus:ring-2 focus:ring-red-500 focus:border-transparent" />
+                </div>
+                <div>
+                  <label for="state" class="block text-sm font-medium text-gray-400 mb-2">State/Province</label>
+                  <input type="text" id="state" name="state" class="w-full px-4 py-3 bg-black border border-red-900/30 rounded-md text-white focus:ring-2 focus:ring-red-500 focus:border-transparent" />
+                </div>
+                <div>
+                  <label for="zip" class="block text-sm font-medium text-gray-400 mb-2">ZIP/Postal</label>
+                  <input type="text" id="zip" name="zip" class="w-full px-4 py-3 bg-black border border-red-900/30 rounded-md text-white focus:ring-2 focus:ring-red-500 focus:border-transparent" />
+                </div>
+              </div>
+              <div>
+                <label for="country" class="block text-sm font-medium text-gray-400 mb-2">Country</label>
+                <select id="country" name="country" class="w-full px-4 py-3 bg-black border border-red-900/30 rounded-md text-white focus:ring-2 focus:ring-red-500 focus:border-transparent">
+                  <option>United States</option>
+                  <option>Canada</option>
+                  <option>United Kingdom</option>
+                  <option>Australia</option>
+                  <option>Germany</option>
+                  <option>France</option>
+                  <option>Netherlands</option>
+                  <option>Switzerland</option>
+                  <option>Other (Contact for availability)</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contact Information -->
+          <div class="bg-zinc-900/50 border border-red-900/30 rounded-lg p-6">
+            <h3 class="text-white font-semibold mb-4">Secure Contact</h3>
+            <div class="space-y-4">
+              <div>
+                <label for="email" class="block text-sm font-medium text-gray-400 mb-2">Email (Encrypted)</label>
+                <input type="email" id="email" name="email" class="w-full px-4 py-3 bg-black border border-red-900/30 rounded-md text-white focus:ring-2 focus:ring-red-500 focus:border-transparent" placeholder="Use a secure, anonymous email" />
+                <p class="text-xs text-gray-500 mt-2">Recommended: ProtonMail, Tutanota, or similar encrypted email service</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Payment Method -->
+          <div class="bg-zinc-900/50 border border-red-900/30 rounded-lg p-6">
+            <h3 class="text-white font-semibold mb-4">Payment Method</h3>
+            <div class="space-y-4">
+              <div>
+                <label class="block text-sm font-medium text-gray-400 mb-3">Select Payment Type</label>
+                <div class="space-y-2">
+                  <label class="flex items-center p-4 bg-black border border-red-900/30 rounded-md cursor-pointer hover:border-red-700/50 transition-colors">
+                    <input type="radio" name="payment" value="bitcoin" class="text-red-600 focus:ring-red-500" checked />
+                    <span class="ml-3 text-white">Bitcoin (BTC)</span>
+                    <span class="ml-auto text-xs text-gray-500">Most popular</span>
+                  </label>
+                  <label class="flex items-center p-4 bg-black border border-red-900/30 rounded-md cursor-pointer hover:border-red-700/50 transition-colors">
+                    <input type="radio" name="payment" value="monero" class="text-red-600 focus:ring-red-500" />
+                    <span class="ml-3 text-white">Monero (XMR)</span>
+                    <span class="ml-auto text-xs text-gray-500">Maximum privacy</span>
+                  </label>
+                  <label class="flex items-center p-4 bg-black border border-red-900/30 rounded-md cursor-pointer hover:border-red-700/50 transition-colors">
+                    <input type="radio" name="payment" value="ethereum" class="text-red-600 focus:ring-red-500" />
+                    <span class="ml-3 text-white">Ethereum (ETH)</span>
+                  </label>
+                </div>
+              </div>
+              <div class="bg-red-950/20 border border-red-900/50 rounded p-3">
+                <p class="text-xs text-gray-400">
+                  Payment instructions will be provided after order submission. You will receive a unique
+                  wallet address for this transaction. Do not reuse addresses from previous orders.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Terms Acknowledgment -->
+          <div class="bg-zinc-900/50 border border-red-900/30 rounded-lg p-6">
+            <div class="space-y-3">
+              <label class="flex items-start cursor-pointer">
+                <input type="checkbox" class="mt-1 text-red-600 focus:ring-red-500" required />
+                <span class="ml-3 text-sm text-gray-400">
+                  I acknowledge that SUBMISSYN is not approved for human use by any regulatory agency
+                  and I assume all risks associated with its acquisition and use.
+                </span>
+              </label>
+              <label class="flex items-start cursor-pointer">
+                <input type="checkbox" class="mt-1 text-red-600 focus:ring-red-500" required />
+                <span class="ml-3 text-sm text-gray-400">
+                  I understand that all sales are final, no refunds will be issued, and the seller
+                  accepts no liability for any consequences of product use.
+                </span>
+              </label>
+              <label class="flex items-start cursor-pointer">
+                <input type="checkbox" class="mt-1 text-red-600 focus:ring-red-500" required />
+                <span class="ml-3 text-sm text-gray-400">
+                  I confirm that I am ordering this product for research purposes only and accept
+                  full legal responsibility for my actions.
+                </span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Submit -->
+          <div class="flex gap-4">
+            <button type="submit" class="flex-1 rounded-md bg-red-600 px-6 py-4 text-sm font-semibold text-white hover:bg-red-500 transition-colors">
+              Submit Secure Order
+            </button>
+            <a href="/catalog" class="px-6 py-4 rounded-md border border-red-900/50 bg-zinc-900/50 text-sm font-semibold text-gray-300 hover:border-red-700/50 hover:text-white transition-colors">
+              Cancel
+            </a>
+          </div>
+
+        </form>
+      </div>
+
+      <!-- Order Summary Sidebar -->
+      <div class="lg:col-span-1">
+        <div class="bg-zinc-900/50 border border-red-900/30 rounded-lg p-6 sticky top-8">
+          <h3 class="text-white font-semibold mb-4">Order Summary</h3>
+          <div class="space-y-3 mb-6">
+            <div class="flex justify-between text-sm">
+              <span class="text-gray-400">Product</span>
+              <span class="text-white">SUB-100</span>
+            </div>
+            <div class="flex justify-between text-sm">
+              <span class="text-gray-400">Quantity</span>
+              <span class="text-white">1 vial</span>
+            </div>
+            <div class="flex justify-between text-sm">
+              <span class="text-gray-400">Subtotal</span>
+              <span class="text-white">$850.00</span>
+            </div>
+            <div class="flex justify-between text-sm">
+              <span class="text-gray-400">Shipping</span>
+              <span class="text-white">$45.00</span>
+            </div>
+            <div class="pt-3 border-t border-red-900/30 flex justify-between">
+              <span class="text-white font-semibold">Total</span>
+              <span class="text-red-500 font-bold text-lg">$895.00</span>
+            </div>
+          </div>
+
+          <div class="bg-red-950/20 border border-red-900/50 rounded p-4 mb-4">
+            <h4 class="text-red-400 text-sm font-semibold mb-2">Processing Time</h4>
+            <p class="text-xs text-gray-400">
+              Orders are processed within 24 hours. Delivery typically takes 3-5 business days
+              for domestic shipments, 7-14 days for international.
+            </p>
+          </div>
+
+          <div class="space-y-2">
+            <div class="flex items-start text-xs text-gray-500">
+              <svg class="w-4 h-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+              </svg>
+              <span>End-to-end encryption</span>
+            </div>
+            <div class="flex items-start text-xs text-gray-500">
+              <svg class="w-4 h-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+              </svg>
+              <span>Discreet packaging</span>
+            </div>
+            <div class="flex items-start text-xs text-gray-500">
+              <svg class="w-4 h-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+              </svg>
+              <span>Zero data retention</span>
+            </div>
+            <div class="flex items-start text-xs text-gray-500">
+              <svg class="w-4 h-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+              </svg>
+              <span>Anonymous payment</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>

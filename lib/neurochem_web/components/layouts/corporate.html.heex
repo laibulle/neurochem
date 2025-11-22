@@ -1,0 +1,81 @@
+<header class="bg-white shadow-sm" data-theme="light" x-data="{ mobileMenuOpen: false }">
+  <nav class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="flex h-16 justify-between items-center">
+      <div class="flex items-center">
+        <a href="/" class="flex items-center gap-3">
+          <div class="text-2xl font-bold text-blue-600">NEUROCHEM</div>
+          <div class="text-xs text-gray-500 hidden sm:block">Pharmaceutical Innovation</div>
+        </a>
+      </div>
+      <div class="hidden md:flex items-center space-x-8">
+        <a href="/about" class="text-gray-700 hover:text-blue-600 transition-colors">About</a>
+        <a href="/research" class="text-gray-700 hover:text-blue-600 transition-colors">Research</a>
+        <a href="/products" class="text-gray-700 hover:text-blue-600 transition-colors">Products</a>
+        <a href="/contact" class="text-blue-600 font-semibold hover:text-blue-700 transition-colors">Contact Us</a>
+      </div>
+      <button @click="mobileMenuOpen = !mobileMenuOpen" class="md:hidden p-2 text-gray-700 hover:text-blue-600" aria-label="Menu">
+        <svg x-show="!mobileMenuOpen" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+        <svg x-show="mobileMenuOpen" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" x-cloak>
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile menu -->
+    <div x-show="mobileMenuOpen" x-transition class="md:hidden pb-4" x-cloak>
+      <div class="flex flex-col space-y-2 pt-2">
+        <a href="/about" class="px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded transition-colors">About</a>
+        <a href="/research" class="px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded transition-colors">Research</a>
+        <a href="/products" class="px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded transition-colors">Products</a>
+        <a href="/contact" class="px-4 py-2 text-blue-600 font-semibold hover:bg-blue-50 rounded transition-colors">Contact Us</a>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<main class="min-h-screen bg-gray-50">
+  <%= @inner_content %>
+</main>
+
+<footer class="bg-white border-t border-gray-200">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+      <div class="col-span-1">
+        <div class="text-xl font-bold text-blue-600 mb-4">NEUROCHEM</div>
+        <p class="text-sm text-gray-600">
+          Pioneering pharmaceutical solutions for a healthier tomorrow.
+        </p>
+      </div>
+      <div>
+        <h3 class="font-semibold text-gray-900 mb-3">Company</h3>
+        <ul class="space-y-2 text-sm text-gray-600">
+          <li><a href="/about" class="hover:text-blue-600">About Us</a></li>
+          <li><a href="/research" class="hover:text-blue-600">Research</a></li>
+          <li><a href="/contact" class="hover:text-blue-600">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="font-semibold text-gray-900 mb-3">Products</h3>
+        <ul class="space-y-2 text-sm text-gray-600">
+          <li><a href="/products" class="hover:text-blue-600">Our Solutions</a></li>
+          <li><a href="/products" class="hover:text-blue-600">Therapeutic Areas</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="font-semibold text-gray-900 mb-3">Legal</h3>
+        <ul class="space-y-2 text-sm text-gray-600">
+          <li><a href="#" class="hover:text-blue-600">Privacy Policy</a></li>
+          <li><a href="#" class="hover:text-blue-600">Terms of Service</a></li>
+          <li><a href="#" class="hover:text-blue-600">Regulatory Compliance</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="mt-8 pt-8 border-t border-gray-200 text-center text-sm text-gray-500">
+      © <%= DateTime.utc_now().year %> Neurochem Pharmaceuticals. All rights reserved.
+    </div>
+  </div>
+</footer>
+
+<.flash_group flash={@flash} />

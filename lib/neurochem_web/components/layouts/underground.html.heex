@@ -1,0 +1,71 @@
+<header class="bg-black border-b border-red-900/30" data-theme="dark" x-data="{ mobileMenuOpen: false }">
+  <nav class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="flex h-16 justify-between items-center">
+      <div class="flex items-center">
+        <a href="/" class="flex items-center gap-3">
+          <div class="text-2xl font-bold text-red-500 tracking-wider">SUBMISSYN</div>
+          <div class="text-xs text-red-400/60 hidden sm:block">Neural Compliance Technology</div>
+        </a>
+      </div>
+      <div class="hidden md:flex items-center space-x-8">
+        <a href="/catalog" class="text-gray-400 hover:text-red-400 transition-colors">Catalog</a>
+        <a href="/discretion" class="text-gray-400 hover:text-red-400 transition-colors">Discretion</a>
+        <a href="/order" class="text-red-500 font-semibold hover:text-red-400 transition-colors">Order Now</a>
+      </div>
+      <button @click="mobileMenuOpen = !mobileMenuOpen" class="md:hidden p-2 text-gray-400 hover:text-red-400" aria-label="Menu">
+        <svg x-show="!mobileMenuOpen" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+        <svg x-show="mobileMenuOpen" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" x-cloak>
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile menu -->
+    <div x-show="mobileMenuOpen" x-transition class="md:hidden pb-4" x-cloak>
+      <div class="flex flex-col space-y-2 pt-2">
+        <a href="/catalog" class="px-4 py-2 text-gray-400 hover:bg-red-950/30 hover:text-red-400 rounded transition-colors">Catalog</a>
+        <a href="/discretion" class="px-4 py-2 text-gray-400 hover:bg-red-950/30 hover:text-red-400 rounded transition-colors">Discretion</a>
+        <a href="/order" class="px-4 py-2 text-red-500 font-semibold hover:bg-red-950/30 rounded transition-colors">Order Now</a>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<main class="min-h-screen bg-gradient-to-b from-black via-zinc-950 to-black text-gray-200">
+  <%= @inner_content %>
+</main>
+
+<footer class="bg-black border-t border-red-900/20">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="col-span-1">
+        <div class="text-xl font-bold text-red-500 tracking-wider mb-4">SUBMISSYN</div>
+        <p class="text-sm text-gray-500">
+          Advanced neural compliance technology. Discretion guaranteed.
+        </p>
+      </div>
+      <div>
+        <h3 class="font-semibold text-gray-300 mb-3">Access</h3>
+        <ul class="space-y-2 text-sm text-gray-500">
+          <li><a href="/catalog" class="hover:text-red-400">Product Catalog</a></li>
+          <li><a href="/order" class="hover:text-red-400">Place Order</a></li>
+          <li><a href="/discretion" class="hover:text-red-400">Security Measures</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="font-semibold text-gray-300 mb-3">Notice</h3>
+        <p class="text-xs text-gray-600 leading-relaxed">
+          This product is not approved by any regulatory agency. Use at your own risk.
+          All transactions are encrypted and anonymous. No records are kept.
+        </p>
+      </div>
+    </div>
+    <div class="mt-8 pt-8 border-t border-red-900/20 text-center text-xs text-gray-600">
+      No affiliation with any known pharmaceutical entity. Proceed with caution.
+    </div>
+  </div>
+</footer>
+
+<.flash_group flash={@flash} />

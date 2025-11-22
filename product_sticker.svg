@@ -1,0 +1,63 @@
+<svg width="450" height="280" xmlns="http://www.w3.org/2000/svg" font-family="'Roboto Mono', 'Source Code Pro', monospace" fill="black">
+  <!-- 
+    Comment utiliser ce code :
+    1. Copiez tout le contenu de ce bloc de code.
+    2. Collez-le dans un nouveau fichier texte.
+    3. Enregistrez ce fichier avec le nom "submissyn_label.svg".
+    4. Vous pouvez maintenant ouvrir ce fichier dans un navigateur web pour le voir,
+       ou l'importer dans un logiciel de design pour l'exporter en PNG.
+  -->
+  <style>
+    .title {
+      font-size: 24px;
+      font-weight: bold;
+      letter-spacing: 8px;
+      text-anchor: middle;
+    }
+    .subtitle {
+      font-size: 11px;
+      font-weight: bold;
+      text-anchor: middle;
+    }
+    .body {
+      font-size: 10px;
+      text-anchor: start;
+    }
+    .batch {
+      font-size: 10px;
+      font-style: italic;
+      text-anchor: middle;
+    }
+    .logo-s {
+      font-size: 28px;
+      font-weight: bold;
+      text-anchor: middle;
+      dominant-baseline: central;
+    }
+  </style>
+
+  <!-- Logo Hexagone -->
+  <g transform="translate(225, 40)">
+    <polygon points="0,-30 26,-15 26,15 0,30 -26,15 -26,-15" stroke="black" stroke-width="2" fill="none"/>
+    <text class="logo-s" x="0" y="2">S</text>
+  </g>
+
+  <!-- Titre -->
+  <text x="225" y="115" class="title">SUBMISSYN</text>
+  
+  <!-- Ligne de séparation -->
+  <line x1="40" y1="128" x2="410" y2="128" stroke="black" stroke-width="1.5" />
+
+  <!-- Sous-titre -->
+  <text x="225" y="150" class="subtitle">COMPOUND NEURO-ACTIVE 7.4</text>
+  <text x="225" y="165" class="subtitle">REF: AEGIS-LABS-P7.4</text>
+
+  <!-- Instructions -->
+  <text x="60" y="195" class="body">[!] For validated experimental use only.</text>
+  <text x="90" y="210" class="body">Do not expose to light.</text>
+  <text x="90" y="225" class="body">Stability: 72h after seal is broken.</text>
+
+  <!-- Numéro de lot -->
+  <text x="225" y="255" class="batch">[ Batch: 74-A9 ]</text>
+
+</svg>
