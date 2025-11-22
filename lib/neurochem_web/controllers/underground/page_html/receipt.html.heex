@@ -1,4 +1,17 @@
 <style>
+  /* Make legal/disclaimer text extremely small and less obtrusive */
+  .muted-legal {
+    font-size: 8px !important;
+    line-height: 1 !important;
+    color: rgba(0,0,0,0.45) !important;
+    opacity: 0.85 !important;
+    margin: 0.1rem 0 !important;
+    padding: 0.2rem !important;
+    transform: scale(0.95);
+    transform-origin: left top;
+  }
+  .muted-legal p { margin: 0 !important; }
+
   @media print {
     @page {
       margin: 0.5in;
@@ -34,10 +47,23 @@
 
     /* Reduce overall print scale so the previous page fits on a single sheet */
     .print-container {
-      -webkit-transform: scale(0.9);
-      transform: scale(0.9);
+      -webkit-transform: scale(0.82);
+      transform: scale(0.82);
       transform-origin: top center;
-      width: calc(100% / 0.9);
+      width: calc(100% / 0.82);
+    }
+
+    /* Keep the footer together on a single printed page */
+    .receipt-footer {
+      page-break-inside: avoid;
+      break-inside: avoid;
+      -webkit-column-break-inside: avoid;
+      font-size: 10px;
+    }
+    /* Ensure muted legal remains small on print as well */
+    .muted-legal {
+      font-size: 7px !important;
+      line-height: 1 !important;
     }
   }
 </style>
@@ -196,7 +222,7 @@
     </div>
 
     <!-- Discretion Notice -->
-    <div class="mb-3 bg-black text-white p-2.5 rounded">
+    <div class="mb-3 p-2.5 rounded muted-legal">
       <h3 class="text-xs font-semibold mb-1 uppercase tracking-wide">Discretion & Security</h3>
       <p class="text-xs leading-relaxed">
         Transaction processed anonymously. No records retained after delivery. All communications encrypted and permanently deleted.
@@ -205,7 +231,7 @@
     </div>
 
     <!-- Footer -->
-    <div class="pt-2 border-t border-gray-300 text-center">
+    <div class="pt-2 border-t border-gray-300 text-center receipt-footer muted-legal">
       <p class="text-xs text-gray-500 mb-1">
         Order confirmation for purchaser records only. No customer service • No refunds • No records retained
       </p>
